@@ -1,0 +1,313 @@
+/* --------------------------------------------------
+ Table of Contents
+ -----------------------------------------------------
+ :: Fonts
+ :: Shared Styles
+ :: Header 
+ :: Background
+ :: Sections
+ 	:: Visit
+ 	:: About
+ 	:: Events
+ 	:: Partners
+ 	:: Contribute
+ :: Footer
+ :: Modals
+ */
+
+/* -----------------------------------------
+ Fonts
+ -----------------------------------------*/
+
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Dosis SemiBold'), local('Dosis-SemiBold'), url(http://themes.googleusercontent.com/static/fonts/dosis/v1/f8qltGyj2S-SS_tsOHsjgfesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(http://themes.googleusercontent.com/static/fonts/nunito/v4/1TiHc9yag0wq3lDO9cw0vj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+/* -----------------------------------------
+ Shared Styles
+ -----------------------------------------*/
+
+body, div, dl, dt, dd, ul, ol, li, pre, form, p, blockquote, th, td, a, .button {
+	font-family: 'Nunito', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Dosis', sans-serif;
+}
+
+body, div, dl, dt, dd, ul, ol, li, pre, p, blockquote, th, td {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+h1.centered, h2.centered, h3.centered, h4.centered, h5.centered, h6.centered {
+	text-align: center;
+}
+
+h1.right, h2.right, h3.right, h4.right, h5.right, h6.right {
+	float: right;
+}
+
+a, a:visited {
+	color: #b31b1b;
+	text-decoration: none;
+}
+ 
+a:hover {
+	color: #b31b1b;
+	text-decoration: none;
+}
+ 
+.button {
+	background: #b31b1b;
+	border: 1px solid #691010;
+	color: #fff;
+}
+ 
+a.button, a.button:hover {
+	color: #fff;
+}
+ 
+.button:hover {
+	background-color: #871414;
+}
+ 
+.button:focus {
+	-webkit-box-shadow: 0 0 4px #b31b1b, 0 1px 0 rgba(255,255,255,0.5) inset;
+	-moz-box-shadow: 0 0 4px #b31b1b, 0 1px 0 rgba(255,255,255,0.5) inset;
+	box-shadow: 0 0 4px #b31b1b, 0 1px 0 rgba(255,255,255,0.5) inset;
+}
+
+img.radius {
+	border-radius: 3px;
+}
+
+hr {
+	border-color: #000;
+	width: 75%;
+	margin: 0px auto 21px;
+}
+
+div.clearfix {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+/* -----------------------------------------
+ Header
+ -----------------------------------------*/
+
+.header-row {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	width: 100%;
+}
+
+.header-row .row {
+	margin: auto;
+	padding-top: 5px;
+	background: #fff;
+}
+
+.header-row img {
+	display: block;
+	margin: auto;
+}
+
+.header-row ul {
+	float: right;
+	height: 34px;
+	margin: 0px;
+}
+
+.header-row li {
+	display: inline-block;
+	margin: 3px 2px 0px;
+	padding: 2px;
+	width: 88px;
+	text-align: center;
+	border-radius: 3px;
+	font-family: 'Dosis', sans-serif;
+	font-size: 18px;
+	-webkit-transition: background 0.05s linear, color 0.05s linear;
+}
+
+.header-row li:hover {
+	border: 2px solid #b31b1b;
+	color: #b31b1b;
+	padding: 0px;
+}
+
+.header-row li.active {
+	background: #b31b1b;
+	color: #ffffff;
+	-webkit-transition: background 0.05s linear 0.1s, color 0.05s linear 0.1s;
+}
+
+/* -----------------------------------------
+ Background
+ -----------------------------------------*/
+
+.main-wrapper {
+	position: relative;
+	margin-top: 15px;
+	padding-top: 30px;
+}
+
+.stripe-height-container {
+	margin-top: 0px;
+}
+
+.stripe-width-container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	z-index: -5;
+}
+
+.stripe-container {
+	background-image: url('../images/body.png');
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	background-size: 100%;
+	height: 100%;
+	min-height: 500px;
+}
+
+@media only screen and (max-width: 767px) {
+	.stripe-height-container {
+		margin-top: 0px;
+	}
+
+	.stripe-width-container {
+		width: 100% !important;
+	}
+
+	.stripe-container {
+		width: 350px;
+		margin: auto;
+	}
+
+}
+
+/* -----------------------------------------
+ Sections
+ -----------------------------------------*/
+
+.nav-spacer {
+	padding-top: 55px;
+	margin-top: -45px;
+	margin-bottom: 40px;
+}
+
+.nav-spacer > .row {
+	background: rgba(200,200,200,0.8);
+	padding: 0px 10px 25px;
+	border-radius: 3px;
+}
+
+.nav-spacer h1 {
+	text-align: center;
+}
+
+/*********** Visit ***********/
+
+.visit-quote {
+	margin: 0px 0px 10px;
+}
+
+.webcam-btn {
+	text-align: center;
+}
+
+webcam-btm img {
+	display: block;
+	height: 100px;
+}
+
+/*********** About ***********/
+
+
+
+/*********** Events ***********/
+
+.recent-event {
+	padding-top: 10px;
+}
+
+.recent-event.first {
+	padding-top: 0px;
+}
+
+.recent-event h5 {
+	margin-top: 0px;
+}
+
+.see-more {
+	float: right;
+	margin-top: 15px;
+}
+
+.tumblr-teaser {
+	padding-top: 25px;
+	text-align: center;
+}
+
+/*********** Partners ***********/
+
+#partners img {
+	border-radius: 3px;
+}
+
+#livestream-modal {
+	border-radius: 3px;
+}
+
+/*********** Contribute ***********/
+
+#ctc-fm-message {
+	height: 140px;
+}
+
+/* -----------------------------------------
+ Footer
+ -----------------------------------------*/
+
+.footer {
+	background: #ffffff;
+}
+
+.footer li {
+	list-style: none;
+}
+
+.site-info img{
+	margin-bottom: 10px;
+}
+
+.site-info p {
+	font-size: 12px;
+	margin: 5px 0px;
+}
+
+/* -----------------------------------------
+ Modals
+ -----------------------------------------*/
+
