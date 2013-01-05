@@ -3,14 +3,14 @@
  -----------------------------------------------------
  :: Fonts
  :: Shared Styles
- :: Header 
+ :: Header
  :: Background
  :: Sections
- 	:: Visit
- 	:: About
- 	:: Events
- 	:: Partners
- 	:: Contribute
+ :: Visit
+ :: About
+ :: Events
+ :: Partners
+ :: Contribute
  :: Footer
  :: Modals
  */
@@ -20,17 +20,17 @@
  -----------------------------------------*/
 
 @font-face {
-  font-family: 'Dosis';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Dosis SemiBold'), local('Dosis-SemiBold'), url(http://themes.googleusercontent.com/static/fonts/dosis/v1/f8qltGyj2S-SS_tsOHsjgfesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+	font-family: 'Dosis';
+	font-style: normal;
+	font-weight: 600;
+	src: local('Dosis SemiBold'), local('Dosis-SemiBold'), url(http://themes.googleusercontent.com/static/fonts/dosis/v1/f8qltGyj2S-SS_tsOHsjgfesZW2xOQ-xsNqO47m55DA.woff) format('woff');
 }
 
 @font-face {
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Nunito-Light'), url(http://themes.googleusercontent.com/static/fonts/nunito/v4/1TiHc9yag0wq3lDO9cw0vj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+	font-family: 'Nunito';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Nunito-Light'), url(http://themes.googleusercontent.com/static/fonts/nunito/v4/1TiHc9yag0wq3lDO9cw0vj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 }
 
 /* -----------------------------------------
@@ -62,26 +62,26 @@ a, a:visited {
 	color: #b31b1b;
 	text-decoration: none;
 }
- 
+
 a:hover {
 	color: #b31b1b;
 	text-decoration: none;
 }
- 
+
 .button {
 	background: #b31b1b;
 	border: 1px solid #691010;
 	color: #fff;
 }
- 
+
 a.button, a.button:hover {
 	color: #fff;
 }
- 
+
 .button:hover {
 	background-color: #871414;
 }
- 
+
 .button:focus {
 	-webkit-box-shadow: 0 0 4px #b31b1b, 0 1px 0 rgba(255,255,255,0.5) inset;
 	-moz-box-shadow: 0 0 4px #b31b1b, 0 1px 0 rgba(255,255,255,0.5) inset;
@@ -123,6 +123,7 @@ div.clearfix {
 	margin: auto;
 	padding-top: 5px;
 	background: #fff;
+	height: 100%;
 }
 
 .header-row img {
@@ -132,26 +133,34 @@ div.clearfix {
 
 .header-row ul {
 	float: right;
-	height: 34px;
+	height: 28px;
 	margin: 0px;
 }
 
 .header-row li {
 	display: inline-block;
-	margin: 3px 2px 0px;
-	padding: 2px;
+	margin: 1px 2px 0px;
+	height: 100%;
+	padding: 3px 2px 0px;
 	width: 88px;
 	text-align: center;
 	border-radius: 3px;
 	font-family: 'Dosis', sans-serif;
-	font-size: 18px;
+	font-size: 19px;
 	-webkit-transition: background 0.05s linear, color 0.05s linear;
+	line-height: 1.25;
+}
+
+@media only screen and (max-width: 880px) {
+	.header-row li {
+		margin-top: -3px;
+	}
 }
 
 .header-row li:hover {
 	border: 2px solid #b31b1b;
 	color: #b31b1b;
-	padding: 0px;
+	padding: 1px 0px 0px;
 }
 
 .header-row li.active {
@@ -244,8 +253,6 @@ webcam-btm img {
 
 /*********** About ***********/
 
-
-
 /*********** Events ***********/
 
 .recent-event {
@@ -276,8 +283,82 @@ webcam-btm img {
 	border-radius: 3px;
 }
 
-#livestream-modal {
-	border-radius: 3px;
+.people-list {
+	display: block;
+	overflow: hidden;
+	padding: 0;
+}
+
+.people-list li {
+	display: block;
+	height: auto;
+	float: left;
+	position: relative;
+	width: 25%;
+	padding: 0 10px 10px;
+	list-style: none;
+}
+
+@media only screen and (max-width: 767px) {
+	.people-list li {
+		width: 50%;
+	}
+}
+
+.name-overlay-wrapper {
+	height: 25%;
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	padding: 0px 10px 10px;
+}
+
+.name-overlay-wrapper div {
+	width: 100%;
+	color: #fff;
+	text-align: center;
+	line-height: 1.2;
+	background: rgba(179,27,27,0.6)
+}
+
+.hacker {
+	/*background: rgba(0,255,1,0.5);*/
+}
+
+.hustler {
+	/*background: rgba(255,0,72,0.5);*/
+}
+
+.hipster {
+	/*background: rgba(2,172,255,0.5);*/
+}
+
+.sponsor-list {
+	display: block;
+	overflow: hidden;
+	padding: 0;
+}
+
+.sponsor-list li {
+	display: block;
+	height: auto;
+	float: left;
+	position: relative;
+	width: 50%;
+	padding: 0 8px 8px;
+	list-style: none;
+}
+
+@media only screen and (max-width: 767px) {	
+	.sponsor-list li {
+		width: 100%;
+	}
+	
+	.sponsor-list img {
+		display: block;
+		margin: auto;
+	}
 }
 
 /*********** Contribute ***********/
@@ -298,7 +379,7 @@ webcam-btm img {
 	list-style: none;
 }
 
-.site-info img{
+.site-info img {
 	margin-bottom: 10px;
 }
 
@@ -310,4 +391,43 @@ webcam-btm img {
 /* -----------------------------------------
  Modals
  -----------------------------------------*/
+
+.reveal-modal {
+	border-radius: 3px;
+}
+
+/*********** Livestream ***********/
+
+/*********** Bio ***********/
+#bio-modal {
+	width: 60%;
+	margin-left: -30%;
+}
+
+@media only screen and (max-width: 767px) {
+	#bio-modal {
+		width: 90%;
+		margin-left: -45%;
+	}
+}
+
+#bio-links {
+	width: auto;
+	list-style: none;
+	position: relative;
+	float: left;
+	display: block;
+	left: 50%;
+}
+
+#bio-links li {
+	display: inline-block;
+	text-align: center;
+	padding: 5px;
+	margin: 0px 5px;
+	position: relative;
+	float: left;
+	display: block;
+	right: 50%;
+}
 
