@@ -255,6 +255,16 @@ webcam-btm img {
 
 /*********** Events ***********/
 
+.panel {
+	border-radius: 3px;
+	padding: 25px;
+	background: #ffffff;
+}
+
+.events-listserv-form .button {
+	height: 32px;
+}
+
 .recent-event {
 	padding-top: 10px;
 }
@@ -367,6 +377,9 @@ webcam-btm img {
 	height: 140px;
 }
 
+#contact-submit {
+	float: right;
+}
 /* -----------------------------------------
  Footer
  -----------------------------------------*/
