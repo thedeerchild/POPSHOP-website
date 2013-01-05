@@ -147,7 +147,7 @@ div.clearfix {
 	border-radius: 3px;
 	font-family: 'Dosis', sans-serif;
 	font-size: 19px;
-	-webkit-transition: background 0.05s linear, color 0.05s linear;
+	/*-webkit-transition: background 0.05s linear, color 0.05s linear;*/
 	line-height: 1.25;
 }
 
@@ -166,7 +166,7 @@ div.clearfix {
 .header-row li.active {
 	background: #b31b1b;
 	color: #ffffff;
-	-webkit-transition: background 0.05s linear 0.1s, color 0.05s linear 0.1s;
+	/*-webkit-transition: background 0.05s linear 0.1s, color 0.05s linear 0.1s;*/
 }
 
 /* -----------------------------------------
@@ -385,11 +385,20 @@ webcam-btm img {
  -----------------------------------------*/
 
 .footer {
-	background: #ffffff;
+	background: rgba(255,255,255,0);
 }
 
 .footer li {
 	list-style: none;
+}
+
+.footer img {
+	display: block;
+	margin: auto;
+}
+
+.site-info {
+	background: #ffffff;
 }
 
 .site-info img {

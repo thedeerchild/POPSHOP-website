@@ -355,19 +355,7 @@
 					</div>
 				</div>
 				<div class="row footer">
-					<div class="four columns site-info">
-						<img src="images/foot.png">
-						<p>
-							This site is <a href="#">Open Source</a>.
-						</p>
-						<p>
-							The source code is available on <a href="#">Github</a>.
-						</p>
-						<p>
-							Designed by <a href="#">Eric Morris</a>.
-						</p>
-					</div>
-					<div class="two columns">
+					<div class="two columns push-four">
 						<h5>Social</h5>
 						<ul>
 							<li>
@@ -387,7 +375,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="three columns">
+					<div class="three columns push-four">
 						<h5>Sponsors</h5>
 						<ul>
 							<li>
@@ -407,7 +395,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="three columns">
+					<div class="three columns push-four">
 						<h5>Location</h5>
 						<img src="images/map.png">
 						<p>
@@ -416,6 +404,18 @@
 							Ithaca, NY
 							<br />
 							14850
+						</p>
+					</div>
+					<div class="four columns pull-eight site-info">
+						<img src="images/foot.png">
+						<p>
+							This site is <a href="#">Open Source</a>.
+						</p>
+						<p>
+							The source code is available on <a href="#">Github</a>.
+						</p>
+						<p>
+							Designed by <a href="#">Eric Morris</a>.
 						</p>
 					</div>
 				</div>
@@ -438,7 +438,6 @@
 			<a class="close-reveal-modal">&#215;</a>
 		</div>
 
-		<script src="javascripts/jquery.js"></script>
 		<script src="javascripts/foundation.min.js"></script>
 		<script src="javascripts/app.js"></script>
 		<script src="javascripts/webcam.js"></script>
@@ -591,7 +590,7 @@
 					var target = $(this).attr('href');
 					$('html, body').animate({
 						scrollTop : $(target).offset().top
-					}, 500);
+					}, 750);
 				});
 				$('a.livestream-trigger').click(function(e) {
 					e.preventDefault();
