@@ -82,7 +82,7 @@
 								<div class="clearfix"></div>
 							</div>
 							<p>
-								While POPSHOP strives to be as accessible as possible, we simply can't be open 24 hours a day (as much as we'd love to be).  Instead, we're open whenever a member of the <a class="scroll" href="#partners">steering committee</a> is present, which ends up being a lot of the time.  We'd suggest trying afternoons or evenings, though some nights you can find people there until well into the next morning (you can see if we're in POPSHOP by using the "see what's popping" button below).  If you want to ensure that POPSHOP is unlocked a specific time, or if you'd like fingerprint access, don't hesistate to <a class="scroll" href="#contribute">get in touch</a>.  
+								While POPSHOP strives to be as accessible as possible, we simply can't be open 24 hours a day (as much as we'd love to be).  Instead, we're open whenever a member of the <a class="scroll" href="#partners">steering committee</a> is present, which ends up being a lot of the time.  We'd suggest trying afternoons or evenings, though some nights you can find people there until well into the next morning (you can see if we're in POPSHOP by using the "see what's popping" button below).  If you want to ensure that POPSHOP is unlocked a specific time, or if you'd like fingerprint access, don't hesistate to <a class="scroll" href="#contribute">get in touch</a>.
 							</p>
 							<p class="webcam-btn">
 								<a href="#" class="button radius livestream-trigger"><img style="height:10px;" src="images/icons/glyphicons_180_facetime_video2.png">&nbsp;&nbsp;See what's popping!</a>
@@ -135,43 +135,26 @@
 							</iframe>
 							<h3>Listserv</h3>
 							<div class="panel">
-								
+
 								<p>
-								To be notified about all our upcoming events, sign up for the listserv:
-							</p>
-							<form class="events-listserv-form" action="#" method="post">
-								<div class="row">
-									<div class="eight mobile-three columns">
-										<input type="text" placeholder="you@example.com" />
+									To be notified about all our upcoming events, sign up for the listserv:
+								</p>
+								<form class="events-listserv-form" action="#" method="post">
+									<div class="row">
+										<div class="eight mobile-three columns">
+											<input type="text" placeholder="you@example.com" />
+										</div>
+										<div class="four mobile-one columns">
+											<input type="submit" class="button radius medium expand" value="Join">
+										</div>
 									</div>
-									<div class="four mobile-one columns">
-										<a class="button radius medium expand">Join</a>
-									</div>
-								</div>
-							</form>
+								</form>
 							</div>
 						</div>
 						<div class="six columns">
 							<h3>Recent</h3>
-							<div class="row recent-event first">
-								<div class="four columns">
-									<img class="radius" src="http://placehold.it/200x200/319648&text=Event Photo">
-								</div>
-								<div class="eight columns">
-									<a href="#"><h5>Name of Cool Event</h5></a>
-									Brief writeup from Tumblr, with a link to see more. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-									<a class="see-more" href="#">Read more...</a>
-								</div>
-							</div>
-							<div class="row recent-event">
-								<div class="four columns">
-									<img class="radius" src="http://placehold.it/200x200/993165&text=Event Photo">
-								</div>
-								<div class="eight columns">
-									<a href="#"><h5>Cool Event With a Really, Really Long Name</h5></a>
-									Brief writeup from Tumblr, with a link to see more. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in...
-									<a class="see-more" href="#">Read more...</a>
-								</div>
+							<div id="tumblr-container">
+
 							</div>
 							<div class="row tumblr-teaser">
 								<div class="twelve columns">
@@ -343,7 +326,9 @@
 								<label id="ctc-fm-message-lbl" for="ctc-fm-message"> Message</label>
 								<textarea id="ctc-fm-message" name="message" placeholder="Tell us something that'll make us smile..."></textarea>
 								<p>
-									<label><input type="checkbox" CHECKED>Sign up for the POPSHOP listserv.</label>
+									<label>
+										<input type="checkbox" CHECKED>
+										Sign up for the POPSHOP listserv.</label>
 								</p>
 								<input id="contact-submit" type="submit" class="button radius" value="Send">
 							</form>
@@ -548,7 +533,7 @@
 				}
 			};
 
-			var imageBaseURL = 'images/people/'
+			var imageBaseURL = 'images/people/';
 
 			function writeBio(netID) {
 				var info = bios[netID];
@@ -575,8 +560,23 @@
 					target = '#bio-' + key;
 					$(target).html(payload);
 				}
-			}
+			};
+
+			function tumblrData(data) {
+				for ( i = 0; i < 2; i++) {
+					var body = data.response.posts[i].body;
+					var im_start = body.indexOf('src=\"') + 5;
+					var im_end = body.indexOf('\"',im_start);
+					var img = body.substring(im_start,im_end);
+					var bod_start = body.indexOf('</p>') + 4;
+					var bod_end = body.length + 1;
+					var body = body.substring(bod_start, bod_end).replace(/<(?:.|\n)*?>/gm, '');
+					var insert = '<div class="row recent-event"><div class="four columns"><img class="radius" src="' + img + '"></div><div class="eight columns"><a href="' + data.response.posts[i].post_url + '"><h5>' + data.response.posts[i].title + '</h5></a>' + body + '<a class="see-more" href="' + data.response.posts[i].post_url + '">Read more</a></div></div>';
+					$('#tumblr-container').append(insert);
+				}
+			};
 		</script>
+		<script type="text/javascript" src="http://api.tumblr.com/v2/blog/poprightin.tumblr.com/posts/text?api_key=m3B4L4dvXjyGHKS1laNFRjqP4IWDShvXn51SBMmqHBrUADTTKo&limit=2&jsonp=tumblrData"></script>
 		<script>
 			$(document).ready(function() {
 				$('.bio-link').click(function(e) {

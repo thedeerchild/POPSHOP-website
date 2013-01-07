@@ -399,6 +399,7 @@ webcam-btm img {
 
 .site-info {
 	background: #ffffff;
+	min-height: 275px;
 }
 
 .site-info img {
