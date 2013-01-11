@@ -6,22 +6,21 @@
  :: Header
  :: Background
  :: Sections
- ---- Visit
- ---- Events
- ---- About
- ---- Partners
- ---- Contribute
+ ----Visit
+ ----Events
+ ----About
+ ----Partners
+ ----Contribute
  :: Footer
  :: Modals
- ---- Livestream
- ---- Bio
+ ----Livestream
+ ----Bio
+ ----Join
  :: Lightbox
  */
-
 /* -----------------------------------------
  Fonts
  -----------------------------------------*/
-
 @font-face {
 	font-family: 'Dosis';
 	font-style: normal;
@@ -39,7 +38,6 @@
 /* -----------------------------------------
  Shared Styles
  -----------------------------------------*/
-
 body, div, dl, dt, dd, ul, ol, li, pre, form, p, blockquote, th, td, a, .button {
 	font-family: 'Nunito', sans-serif;
 }
@@ -87,7 +85,6 @@ a.button, a.button:hover {
 
 .button:focus {
 	-webkit-box-shadow: 0 0 4px #b31b1b, 0 1px 0 rgba(255,255,255,0.5) inset;
-	-moz-box-shadow: 0 0 4px #b31b1b, 0 1px 0 rgba(255,255,255,0.5) inset;
 	box-shadow: 0 0 4px #b31b1b, 0 1px 0 rgba(255,255,255,0.5) inset;
 }
 
@@ -113,7 +110,6 @@ div.clearfix {
 /* -----------------------------------------
  Header
  -----------------------------------------*/
-
 .header-row {
 	position: fixed;
 	top: 0;
@@ -136,7 +132,7 @@ div.clearfix {
 
 .header-row ul {
 	float: right;
-	height: 28px;
+	height: 27px;
 	margin: 0px;
 }
 
@@ -149,8 +145,8 @@ div.clearfix {
 	text-align: center;
 	border-radius: 3px;
 	font-family: 'Dosis', sans-serif;
-	font-size: 19px;
-	/*-webkit-transition: background 0.05s linear, color 0.05s linear;*/
+	font-size: 19px; /*-webkit-transition:  background 0.05s linear, color 0.05s linear;
+	 */
 	line-height: 1.25;
 }
 
@@ -158,6 +154,7 @@ div.clearfix {
 	.header-row li {
 		margin-top: -3px;
 	}
+
 }
 
 .header-row li:hover {
@@ -168,14 +165,13 @@ div.clearfix {
 
 .header-row li.active {
 	background: #b31b1b;
-	color: #ffffff;
-	/*-webkit-transition: background 0.05s linear 0.1s, color 0.05s linear 0.1s;*/
+	color: #ffffff; /*-webkit-transition:  background 0.05s linear 0.1s, color 0.05s linear 0.1s;
+	 */
 }
 
 /* -----------------------------------------
  Background
  -----------------------------------------*/
-
 .main-wrapper {
 	position: relative;
 	margin-top: 15px;
@@ -213,7 +209,7 @@ div.clearfix {
 	}
 
 	.stripe-container {
-		width: 350px;
+		max-width: 350px;
 		margin: auto;
 	}
 
@@ -222,7 +218,6 @@ div.clearfix {
 /* -----------------------------------------
  Sections
  -----------------------------------------*/
-
 .nav-spacer {
 	padding-top: 55px;
 	margin-top: -45px;
@@ -239,8 +234,14 @@ div.clearfix {
 	text-align: center;
 }
 
-/*********** Visit ***********/
+@media only screen and (max-width: 767px) {
+	.intro-blurb {
+		background: rgba(255,255,255,0.5);
+	}
 
+}
+
+/*********** Visit ***********/
 .visit-quote {
 	margin: 0px 0px 10px;
 }
@@ -255,7 +256,6 @@ webcam-btm img {
 }
 
 /*********** Events ***********/
-
 .panel {
 	border-radius: 3px;
 	padding: 25px;
@@ -288,14 +288,27 @@ webcam-btm img {
 	text-align: center;
 }
 
-/*********** About ***********/
+#gcal-wrapper {
+	height: 300px;
+}
 
+#gcal {
+	height: 300px;
+	width: 100%;
+}
+
+#list-fm-msg img {
+	display: block;
+	margin: auto;
+	max-width: 150px;
+}
+
+/*********** About ***********/
 #about img {
 	border-radius: 3px;
 }
 
 /*********** Partners ***********/
-
 #partners img {
 	border-radius: 3px;
 }
@@ -320,6 +333,7 @@ webcam-btm img {
 	.people-list li {
 		width: 50%;
 	}
+
 }
 
 .name-overlay-wrapper {
@@ -336,19 +350,22 @@ webcam-btm img {
 	color: #fff;
 	text-align: center;
 	line-height: 1.2;
-	background: rgba(179,27,27,0.6)
+	background: rgba(179,27,27,0.6);
 }
 
 .hacker {
-	/*background: rgba(0,255,1,0.5);*/
+	/*background:  rgba(0,255,1,0.5);
+	 */
 }
 
 .hustler {
-	/*background: rgba(255,0,72,0.5);*/
+	/*background:  rgba(255,0,72,0.5);
+	 */
 }
 
 .hipster {
-	/*background: rgba(2,172,255,0.5);*/
+	/*background:  rgba(2,172,255,0.5);
+	 */
 }
 
 .sponsor-list {
@@ -367,30 +384,34 @@ webcam-btm img {
 	list-style: none;
 }
 
-@media only screen and (max-width: 767px) {	
+@media only screen and (max-width: 767px) {
 	.sponsor-list li {
 		width: 100%;
 	}
-	
+
 	.sponsor-list img {
 		display: block;
 		margin: auto;
 	}
+
 }
 
 /*********** Contribute ***********/
-
 #ctc-fm-message {
 	height: 140px;
+}
+
+#ctc-fm-msg {
+	float: left;
 }
 
 #contact-submit {
 	float: right;
 }
+
 /* -----------------------------------------
  Footer
  -----------------------------------------*/
-
 .footer {
 	background: rgba(255,255,255,0);
 }
@@ -418,16 +439,20 @@ webcam-btm img {
 	margin: 5px 0px;
 }
 
+.social-media-links img {
+	display: inline-block;
+	height: 16px;
+	margin: 2px 0px -2px;
+}
+
 /* -----------------------------------------
  Modals
  -----------------------------------------*/
-
 .reveal-modal {
 	border-radius: 3px;
 }
 
 /*********** Livestream ***********/
-
 /*********** Bio ***********/
 #bio-modal {
 	width: 60%;
@@ -439,6 +464,7 @@ webcam-btm img {
 		width: 90%;
 		margin-left: -45%;
 	}
+
 }
 
 #bio-links {
@@ -461,175 +487,171 @@ webcam-btm img {
 	right: 50%;
 }
 
+/*********** Join ***********/
 /* -----------------------------------------
  Lightbox
  -----------------------------------------*/
-
 #lightboxOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  background-color: black;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
-  opacity: 0.85;
-  display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	background-color: black;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+	filter: alpha(opacity=85);
+	opacity: 0.85;
+	display: none;
 }
 
 #lightbox {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  z-index: 10000;
-  text-align: center;
-  line-height: 0;
-  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
-  font-weight: normal;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	z-index: 10000;
+	text-align: center;
+	line-height: 0;
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+	font-weight: normal;
 }
 
 #lightbox img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
+	width: auto;
+	height: auto;
+	max-width: 100%;
 }
 
 #lightbox a img {
-  border: none;
+	border: none;
 }
 
 .lb-outerContainer {
-  position: relative;
-  background-color: white;
-  *zoom: 1;
-  width: 250px;
-  height: 250px;
-  margin: 0 auto;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
+	position: relative;
+	background-color: white;
+	*zoom: 1;
+	width: 250px;
+	height: 250px;
+	margin: 0 auto;
+	border-radius: 4px;
 }
 
 .lb-outerContainer:after {
-  content: "";
-  display: table;
-  clear: both;
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .lb-container {
-  padding: 10px;
+	padding: 10px;
 }
 
 .lb-loader {
-  position: absolute;
-  top: 40%;
-  left: 0%;
-  height: 25%;
-  width: 100%;
-  text-align: center;
-  line-height: 0;
+	position: absolute;
+	top: 40%;
+	left: 0%;
+	height: 25%;
+	width: 100%;
+	text-align: center;
+	line-height: 0;
 }
 
 .lb-nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 10;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
 }
 
 .lb-container > .nav {
-  left: 0;
+	left: 0;
 }
 
 .lb-nav a {
-  outline: none;
+	outline: none;
 }
 
 .lb-prev, .lb-next {
-  width: 49%;
-  height: 100%;
-  background-image: url("data:image/lightbox/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
-  /* Trick IE into showing hover */
-  display: block;
+	width: 49%;
+	height: 100%;
+	background-image: url("data: image/lightbox/gif;
+	base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"); /* Trick IE into showing hover */
+	display: block;
 }
 
 .lb-prev {
-  left: 0;
-  float: left;
+	left: 0;
+	float: left;
 }
 
 .lb-next {
-  right: 0;
-  float: right;
+	right: 0;
+	float: right;
 }
 
 .lb-prev:hover {
-  background: url(../images/lightbox/prev.png) left 48% no-repeat;
+	background: url(../images/lightbox/prev.png) left 48% no-repeat;
 }
 
 .lb-next:hover {
-  background: url(../images/lightbox/next.png) right 48% no-repeat;
+	background: url(../images/lightbox/next.png) right 48% no-repeat;
 }
 
 .lb-dataContainer {
-  margin: 0 auto;
-  padding-top: 5px;
-  *zoom: 1;
-  width: 100%;
-  -moz-border-radius-bottomleft: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-  -ms-border-bottom-left-radius: 4px;
-  -o-border-bottom-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  -moz-border-radius-bottomright: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-  -ms-border-bottom-right-radius: 4px;
-  -o-border-bottom-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+	margin: 0 auto;
+	padding-top: 5px;
+	*zoom: 1;
+	width: 100%;
+	border-radius-bottomleft: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-ms-border-bottom-left-radius: 4px;
+	-o-border-bottom-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-radius-bottomright: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	-ms-border-bottom-right-radius: 4px;
+	-o-border-bottom-right-radius: 4px;
+	border-bottom-right-radius: 4px;
 }
 
 .lb-dataContainer:after {
-  content: "";
-  display: table;
-  clear: both;
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .lb-data {
-  padding: 0 10px;
-  color: #bbbbbb;
+	padding: 0 10px;
+	color: #bbbbbb;
 }
 
 .lb-data .lb-details {
-  width: 85%;
-  float: left;
-  text-align: left;
-  line-height: 1.1em;
+	width: 85%;
+	float: left;
+	text-align: left;
+	line-height: 1.1em;
 }
 
 .lb-data .lb-caption {
-  font-size: 13px;
-  font-weight: bold;
-  line-height: 1em;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 1em;
 }
 
 .lb-data .lb-number {
-  display: block;
-  clear: left;
-  padding-bottom: 1em;
-  font-size: 11px;
+	display: block;
+	clear: left;
+	padding-bottom: 1em;
+	font-size: 11px;
 }
 
 .lb-data .lb-close {
-  width: 35px;
-  float: right;
-  padding-bottom: 0.7em;
-  outline: none;
+	width: 35px;
+	float: right;
+	padding-bottom: 0.7em;
+	outline: none;
 }
 
 .lb-data .lb-close:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
-

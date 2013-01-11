@@ -9,6 +9,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>POPSHOP | Pop in and start up!</title>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="stylesheets/foundation.min.css">
 		<link rel="stylesheet" href="stylesheets/app.css">
 		<script src="javascripts/modernizr.foundation.js"></script>
@@ -58,7 +60,7 @@
 					</div>
 				</div>
 				<div class="row" data-magellan-destination='top'>
-					<div class="eight columns offset-by-four">
+					<div class="eight columns offset-by-four intro-blurb">
 						<h1>Pop in and start up!</h1>
 						<p>
 							POPSHOP is a new kind of working space and learning environment.  Created as a month long experiment designed to enlist the local startup community to do epic things in the service of making the world a better place, POPSHOP has gone on to become so much more.
@@ -85,7 +87,7 @@
 								While POPSHOP strives to be as accessible as possible, we simply can't be open 24 hours a day (as much as we'd love to be).  Instead, we're open whenever a member of the <a class="scroll" href="#partners">steering committee</a> is present, which ends up being a lot of the time.  We'd suggest trying afternoons or evenings, though some nights you can find people there until well into the next morning (you can see if we're in POPSHOP by using the "see what's popping" button below).  If you want to ensure that POPSHOP is unlocked a specific time, or if you'd like fingerprint access, don't hesistate to <a class="scroll" href="#contribute">get in touch</a>.
 							</p>
 							<p class="webcam-btn">
-								<a href="#" class="button radius livestream-trigger"><img style="height:10px;" src="images/icons/glyphicons_180_facetime_video2.png">&nbsp;&nbsp;See what's popping!</a>
+								<a href="#" class="button radius livestream-trigger"><img style="height:10px;" src="images/icons/video.png">&nbsp;&nbsp;See what's popping!</a>
 							</p>
 						</div>
 					</div>
@@ -107,22 +109,30 @@
 						</div>
 						<div class="six columns">
 							<h3>Upcoming</h3>
-							<iframe src="http://www.google.com/calendar/embed?src=cornell.edu_kv3ikqm57adq9vquvthbthjq0c%40group.calendar.google.com&amp;ctz=America/New_York&amp;mode=AGENDA&amp;showTabs=0&amp;bgcolor=%23d0d0d0&amp;height=300" width="100%" height="300" frameborder="0">
-								Sorry, your browser does not support iframes. Looks like you have to stay at The PopShop forever, so you never miss an event!
-							</iframe>
+							<div id="gcal-wrapper">
+								<iframe id="gcal" src="https://www.google.com/calendar/embed?src=cornell.edu_kv3ikqm57adq9vquvthbthjq0c@group.calendar.google.com&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23d0d0d0" frameborder="0">
+									Sorry, your browser does not support iframes. Looks like you have to stay at The PopShop forever, so you never miss an event!
+								</iframe>
+							</div>
 							<h3>Listserv</h3>
 							<div class="panel">
 
 								<p>
 									To be notified about all our upcoming events, sign up for the listserv:
 								</p>
-								<form class="events-listserv-form" action="#" method="post">
+								<form class="events-listserv-form" action="form.php" method="post">
 									<div class="row">
 										<div class="eight mobile-three columns">
-											<input type="text" placeholder="you@example.com" />
+											<input type="hidden" name="type" value="join">
+											<input id="list-fm-email" type="text" name="email" placeholder="you@example.com" />
 										</div>
 										<div class="four mobile-one columns">
-											<input type="submit" class="button radius medium expand" value="Join">
+											<input id="list-fm-submit" type="submit" class="button radius medium expand" value="Join">
+										</div>
+									</div>
+									<div class="row">
+										<div id="list-fm-msg" class="twelve columns">
+											
 										</div>
 									</div>
 								</form>
@@ -263,7 +273,7 @@
 									</div></a>
 								</li>
 								<li>
-									<img src="http://placehold.it/200x300/000000/ffffff&text=You%3f">
+									<a href="#" class="launch-join-modal"><img src="http://placehold.it/200x300/000000/ffffff&text=You%3f"></a>
 								</li>
 							</ul>
 							<h3>POPSHOP Alumni</h3>
@@ -294,7 +304,7 @@
 										<div class="hacker">
 											Sohan Jain
 											<br />
-											CS 2015
+											CS 2012
 										</div>
 									</div></a>
 								</li>
@@ -317,7 +327,7 @@
 									<a href="http://www.ideapaint.com/"><img src="images/sponsors/idea_paint.jpg"></a>
 								</li>
 								<li>
-									<a href="#"><img src="http://placehold.it/500x200/ffffff/000000&text=You%3f"></a>
+									<a href="#" class="launch-join-modal"><img src="http://placehold.it/500x200/ffffff/000000&text=You%3f"></a>
 								</li>
 							</ul>
 						</div>
@@ -329,7 +339,8 @@
 						<hr />
 						<div class="six columns">
 							<h3>Contact Us</h3>
-							<form id="ctc-fm" class="ctc-fm" action="#" method="post">
+							<form id="ctc-fm" class="ctc-fm" action="form.php" method="post">
+								<input type="hidden" name="type" value="message">
 								<label id="ctc-fm-name-lbl" for="ctc-fm-name"> Name</label>
 								<input class="" id="ctc-fm-name" type="text" name="name" placeholder="Bob Loblaw">
 								<label id="ctc-fm-email-lbl" for="ctc-fm-email"> Email</label>
@@ -338,9 +349,10 @@
 								<textarea id="ctc-fm-message" name="message" placeholder="Tell us something that'll make us smile..."></textarea>
 								<p>
 									<label>
-										<input type="checkbox" CHECKED>
+										<input id="ctc-fm-join" type="checkbox" name="join" CHECKED>
 										Sign up for the POPSHOP listserv.</label>
 								</p>
+								<div id="ctc-fm-msg"></div>
 								<input id="contact-submit" type="submit" class="button radius" value="Send">
 							</form>
 						</div>
@@ -351,27 +363,40 @@
 					</div>
 				</div>
 				<div class="row footer">
-					<div class="two columns push-four">
+					<div class="four columns site-info hide-for-small">
+						<img src="images/foot.png">
+						<p>
+							This site is <a href="#">Open Source</a>.
+						</p>
+						<p>
+							The source code is available on <a href="#">Github</a>.
+						</p>
+						<p>
+							Designed by <a href="http://elmorris.me">Eric Morris</a>.
+						</p>
+					</div>
+					<div class="two columns social-media-links">
 						<h5>Social</h5>
 						<ul>
 							<li>
-								<a href="http://www.facebook.com/poprightin">Facebook</a>
+								<a href="http://www.facebook.com/poprightin"><img src="images/icons/facebook.png">&nbsp;Facebook</a>
 							</li>
 							<li>
-								<a href="https://twitter.com/poprightin">Twitter</a>
+								<a href="https://twitter.com/poprightin"><img src="images/icons/twitter.png">&nbsp;Twitter</a>
 							</li>
 							<li>
-								<a href="http://poprightin.tumblr.com/">Tumblr</a>
+								<a href="http://poprightin.tumblr.com/"><img src="images/icons/tumblr.png">&nbsp;Tumblr</a>
 							</li>
 							<li>
-								<a href="#">Flickr</a>
+								<a href="#"><img src="images/icons/flickr.png">&nbsp;Flickr</a>
 							</li>
 							<li>
-								<a href="http://www.youtube.com/user/poprightin">YouTube</a>
+								<a href="http://www.youtube.com/user/poprightin"><img src="images/icons/youtube.png">&nbsp;YouTube</a>
 							</li>
 						</ul>
 					</div>
-					<div class="three columns push-four">
+
+					<div class="three columns">
 						<h5>Sponsors</h5>
 						<ul>
 							<li>
@@ -391,7 +416,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="three columns push-four">
+					<div class="three columns">
 						<h5>Location</h5>
 						<img src="images/map.png">
 						<p>
@@ -402,7 +427,7 @@
 							14850
 						</p>
 					</div>
-					<div class="four columns pull-eight site-info">
+					<div class="four columns site-info show-for-small">
 						<img src="images/foot.png">
 						<p>
 							This site is <a href="#">Open Source</a>.
@@ -417,6 +442,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- Modals -->
 		<div id="livestream-modal" class="reveal-modal medium">
 			<div id="livestream-container"></div>
 			<a class="close-reveal-modal">&#215;</a>
@@ -433,227 +459,25 @@
 			</div>
 			<a class="close-reveal-modal">&#215;</a>
 		</div>
-
+		<div id="join-modal" class="reveal-modal medium">
+			<div class="row">
+				<h2 class="centered">Join Us</h2>
+				<h4>Steering Committee</h4>
+				<p>
+					Are you a student who's active in the entreprenurial community at Cornell and wants to take on a leadership role in POPSHOP?  Come talk to us in person, or <a href="#contribute" class="scroll">send us a message</a>.
+				</p>
+				<h4>Sponsors</h4>
+				<p>
+					Interested in sponsoring POPSHOP or an entreprenurship event? <a href="#contribute" class="scroll">Get in touch</a>!
+				</p>
+			</div>
+			<a class="close-reveal-modal">&#215;</a>
+		</div>
+		<!-- Compressed Javascripts -->
 		<script src="javascripts/foundation.min.js"></script>
-		<script src="javascripts/app.js"></script>
-		<script src="javascripts/webcam.js"></script>
-		<script src="javascripts/lightbox.js"></script>
-		<script>
-			var bios = {
-				'jdm299' : {
-					'name' : 'Jesse McElwain',
-					'degree' : 'Architecture 2014',
-					'text' : '',
-					'photo' : 'jesse_mcelwain.jpg',
-					'links' : {
-						'' : ''
-					}
-				},
-				'jeb373' : {
-					'name' : 'Jeremy Blum ',
-					'degree' : 'Electrical and Computer Engineering 2012, MEng 2013',
-					'text' : 'Jeremy is a co-founder of Cornell University Sustainable Design, an Engineering Consultant and Owner of Blum Idea Labs, LLC. and Co-Founder and CTO of SunnLight (an eLab startup).  Even more impressive is the fact that he has tens of thousands of Youtube subscribers.',
-					'photo' : 'jeremy_blum.jpg',
-					'links' : {
-						'Personal Website' : 'http://www.jeremyblum.com',
-						'Twitter' : 'http://www.twitter.com/sciguy14'
-					}
-				},
-				'ja566' : {
-					'name' : 'Jennifer Delaney',
-					'degree' : 'MBA 2013',
-					'text' : '',
-					'photo' : 'jennifer_delaney.jpg',
-					'links' : {
-						'' : ''
-					}
-				},
-				'ec237' : {
-					'name' : 'Emile Chin-Dickey',
-					'degree' : 'MBA 2013',
-					'text' : '',
-					'photo' : 'emile_chin-dickey.jpg',
-					'links' : {
-						'' : ''
-					}
-				},
-				'rrp54' : {
-					'name' : 'Ricky Panzer',
-					'degree' : 'Entrepreneurship (Independent Major) 2013',
-					'text' : '',
-					'photo' : 'ricky_panzer.jpg',
-					'links' : {
-						'' : ''
-					}
-				},
-				'abh68' : {
-					'name' : 'Ali Hamed',
-					'degree' : 'Entrepreneurship (Independent Major) 2014',
-					'text' : '',
-					'photo' : 'ali_hamed.jpg',
-					'links' : {
-						'' : ''
-					}
-				},
-				'msb268' : {
-					'name' : 'Morgan Beller',
-					'degree' : 'Economics 2014',
-					'text' : '',
-					'photo' : 'morgan_beller.jpg',
-					'links' : {
-						'' : ''
-					}
-				},
-				'elm232' : {
-					'name' : 'Eric Morris',
-					'degree' : 'Interaction Design and Entrepreneurship Entrepreneurship (Independent Major) 2015',
-					'text' : 'Eric is a designer who codes, a hacker who starts businesses and a part-time hustler who loves pushing pixels.  He\'s worked at a number of startups, namely TaggPic, Yorango and Nest-it, plus he enjoys sunsets and long walks on the beach.',
-					'photo' : 'eric_morris.jpg',
-					'links' : {
-						'Personal Site' : 'http://elmorris.me',
-						'Linkedin' : 'http://www.linkedin.com/in/elm232/',
-						'Behance' : 'http://www.behance.net/elm232'
-					}
-				},
-				'dp365' : {
-					'name' : 'Dylan Reid ',
-					'degree' : 'Art 2012',
-					'text' : '',
-					'photo' : 'dylan_reid.jpg',
-					'links' : {
-						'' : ''
-					}
-				},
-				'scs237' : {
-					'name' : 'Sam Sinensky',
-					'degree' : 'Computer Science 2012',
-					'text' : '',
-					'photo' : 'sam_sinensky.jpg',
-					'links' : {
-						'' : ''
-					}
-				},
-				'sj346' : {
-					'name' : 'Sohan Jain',
-					'degree' : 'Computer Science 2012',
-					'text' : 'Sohan is a full-stack hacker and aspiring entrepreneur. As an undergrad at Cornell University, he gained software engineering experience at Facebook and Hulu, and he was the lead organizer of the first ever 3 Day Startup Cornell. After graduating, Sohan worked at NYC-based startup Moat. Now, Sohan is a co-founder/CTO at wireLawyer, a professional network for lawyers to share information and refer work to each other.',
-					'photo' : 'sohan_jain.jpg',
-					'links' : {
-						'LinkedIn' : 'http://www.linkedin.com/in/sohanj',
-						'Personal Site' : 'http://sohanjain.com'
-					}
-				}
-			};
-
-			var imageBaseURL = 'images/people/';
-
-			function writeBio(netID) {
-				var info = bios[netID];
-				var payload, target;
-				for (key in info) {
-
-					if (key == 'photo') {
-						payload = '<img src="' + imageBaseURL + info[key] + '">';
-					} else if (key == 'links') {
-						payload = '';
-						var first = true;
-						for (keykey in info[key]) {
-							if (!first) {
-								payload += '<li>|</li>';
-							} else {
-								first = false;
-							}
-							payload += '<li><a href="' + info[key][keykey] + '">' + keykey + '</a></li>';
-						}
-					} else {
-						payload = info[key];
-					}
-
-					target = '#bio-' + key;
-					$(target).html(payload);
-				}
-			};
-
-			function tumblrData(data) {
-				var first = true;
-				var insert = '';
-				for ( i = 0; i < 2; i++) {
-					if (i > 0) {
-						first = false;
-					}
-					var body = data.response.posts[i].body;
-					
-					var im_start = body.indexOf('src=\"') + 5;
-					var im_end = body.indexOf('\"',im_start);
-					var img = body.substring(im_start,im_end);
-					
-					body = body.replace(/<(?:.|\n)*?>/gm, '');
-					var bod_end = body.indexOf(' ',175);
-					if (body[bod_end - 1] == '.' || body[bod_end - 1] == '!' || body[bod_end - 1] == '?' || body[bod_end - 1] == ','){
-						bod_end = body.indexOf(' ',bod_end + 1);
-					}
-					body = body.substring(0,bod_end) + "...";
-					
-					var divider = first ? '':'<hr />';
-					insert += divider + '<div class="row recent-event"><div class="four columns"><a href="' + data.response.posts[i].post_url + '"><img class="radius" src="' + img + '"></a></div><div class="eight columns"><a href="' + data.response.posts[i].post_url + '"><h5>' + data.response.posts[i].title + '</h5></a>' + body + '<a class="see-more" href="' + data.response.posts[i].post_url + '">Read more</a></div></div>';
-				}
-				$('#tumblr-container').html(insert);
-			};
-		</script>
+		<script src="javascripts/app.min.js"></script>
+		<!-- Student Bios -->
+		<script src="javascripts/bio-data.js"></script>
+		<!-- JSON-P -->
 		<script type="text/javascript" src="http://api.tumblr.com/v2/blog/poprightin.tumblr.com/posts/text?api_key=m3B4L4dvXjyGHKS1laNFRjqP4IWDShvXn51SBMmqHBrUADTTKo&limit=2&jsonp=tumblrData"></script>
-		<script>
-			$(document).ready(function() {
-				$('.bio-link').click(function(e) {
-					e.preventDefault();
-					$('#bio-modal').reveal({
-						open : writeBio($(this).attr('data-bio'))
-					});
-				});
-				$('a.scroll').click(function(e) {
-					e.preventDefault();
-					var target = $(this).attr('href');
-					$('html, body').animate({
-						scrollTop : $(target).offset().top
-					}, 750);
-				});
-				$('a.livestream-trigger').click(function(e) {
-					e.preventDefault();
-					$('#livestream-modal').reveal({
-						open : makeLivestream('livestream-container')
-					});
-				});
-				$('#contact-submit').click(function(e) {
-					e.preventDefault();
-					var submit = true;
-					if ($('#ctc-fm-name').val() == '') {
-						$('#ctc-fm-name').addClass('error');
-						$('#ctc-fm-name-lbl').addClass('error');
-						submit = false;
-					} else {
-						$('#ctc-fm-name').removeClass('error');
-						$('#ctc-fm-name-lbl').removeClass('error');
-					}
-					if ($('#ctc-fm-email').val() == '') {
-						$('#ctc-fm-email').addClass('error');
-						$('#ctc-fm-email-lbl').addClass('error');
-						submit = false;
-					} else {
-						$('#ctc-fm-email').removeClass('error');
-						$('#ctc-fm-email-lbl').removeClass('error');
-					}
-					if ($('#ctc-fm-message').val() == '') {
-						$('#ctc-fm-message').addClass('error');
-						$('#ctc-fm-message-lbl').addClass('error');
-						submit = false;
-					} else {
-						$('#ctc-fm-message').removeClass('error');
-						$('#ctc-fm-message-lbl').removeClass('error');
-					}
-					if (submit) {
-						$('#ctc-fm').submit();
-					}
-				});
-			});
-		</script>
-
 	</body>
