@@ -35,8 +35,14 @@
 		});
 	}
 
+	/*************************************************************************************
+	 * Above: Foundation activation code.  Below: Click handlers and form validation.    *
+	 *************************************************************************************/
+
 	$(document).ready(function() {
+		//Email Regex
 		var email_check = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$/i;
+		
 		$('.launch-join-modal').click(function(e) {
 			e.preventDefault();
 			$('#join-modal').reveal();
@@ -44,6 +50,7 @@
 		$('.bio-link').click(function(e) {
 			e.preventDefault();
 			$('#bio-modal').reveal({
+				//Calls bios.js
 				open : writeBio($(this).attr('data-bio'))
 			});
 		});
@@ -58,12 +65,14 @@
 		$('a.livestream-trigger').click(function(e) {
 			e.preventDefault();
 			$('#livestream-modal').reveal({
+				//Calls webcam.js
 				open : makeLivestream('livestream-container')
 			});
 		});
 		$('#contact-submit').click(function(e) {
 			e.preventDefault();
 			var submit = true;
+			//Checks name isn't empty
 			if ($('#ctc-fm-name').val() == '') {
 				$('#ctc-fm-name').addClass('error');
 				$('#ctc-fm-name-lbl').addClass('error');
@@ -72,6 +81,7 @@
 				$('#ctc-fm-name').removeClass('error');
 				$('#ctc-fm-name-lbl').removeClass('error');
 			}
+			//Checks email is a real email
 			if (!email_check.test($('#ctc-fm-email').val())) {
 				$('#ctc-fm-email').addClass('error');
 				$('#ctc-fm-email-lbl').addClass('error');
@@ -80,6 +90,7 @@
 				$('#ctc-fm-email').removeClass('error');
 				$('#ctc-fm-email-lbl').removeClass('error');
 			}
+			//Checks message isn't empty
 			if ($('#ctc-fm-message').val() == '') {
 				$('#ctc-fm-message').addClass('error');
 				$('#ctc-fm-message-lbl').addClass('error');
@@ -88,6 +99,7 @@
 				$('#ctc-fm-message').removeClass('error');
 				$('#ctc-fm-message-lbl').removeClass('error');
 			}
+			//Submit form
 			var data_string = 'type=message' + '&name= ' + $('#ctc-fm-name').val() + '&email=' + $('#ctc-fm-email').val() + '&message=' + $('#ctc-fm-message').val() + '&join=' + $('#ctc-fm-join').val();
 			if (submit) {
 				$.ajax({
@@ -111,6 +123,7 @@
 			e.preventDefault();
 			var email = $('#list-fm-email').val();
 			var submit = true;
+			//Checks email is a real email
 			if (!email_check.test(email)) {
 				$('#list-fm-email').addClass('error');
 				$('#list-fm-email-lbl').addClass('error');
@@ -119,6 +132,7 @@
 				$('#list-fm-email').removeClass('error');
 				$('#list-fm-email-lbl').removeClass('error');
 			}
+			//Submit form
 			var data_string = 'type=join' + '&email=' + email;
 			if (submit) {
 				$.ajax({
