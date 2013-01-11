@@ -25,14 +25,22 @@
 	font-family: 'Dosis';
 	font-style: normal;
 	font-weight: 600;
-	src: local('Dosis SemiBold'), local('Dosis-SemiBold'), url(http://themes.googleusercontent.com/static/fonts/dosis/v1/f8qltGyj2S-SS_tsOHsjgfesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+	src: url('../fonts/dosis-semibold-webfont.eot');
+    src: url('../fonts/dosis-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dosis-semibold-webfont.woff') format('woff'),
+         url('../fonts/dosis-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/dosis-semibold-webfont.svg#webfontregular') format('svg');
 }
 
 @font-face {
 	font-family: 'Nunito';
 	font-style: normal;
 	font-weight: 300;
-	src: local('Nunito-Light'), url(http://themes.googleusercontent.com/static/fonts/nunito/v4/1TiHc9yag0wq3lDO9cw0vj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+	src: url('../fonts/nunito-light-webfont.eot');
+    src: url('../fonts/nunito-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/nunito-light-webfont.woff') format('woff'),
+         url('../fonts/nunito-light-webfont.ttf') format('truetype'),
+         url('../fonts/nunito-light-webfont.svg#webfontregular') format('svg');
 }
 
 /* -----------------------------------------
@@ -232,6 +240,10 @@ div.clearfix {
 
 .nav-spacer h1 {
 	text-align: center;
+}
+
+.intro-blurb {
+	margin-bottom: 15px;
 }
 
 @media only screen and (max-width: 767px) {
