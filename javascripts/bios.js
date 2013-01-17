@@ -4,11 +4,12 @@ var imageBaseURL = 'images/people/';
 function writeBio(netID) {
 	//Calls bio-data.js
 	var info = bios[netID];
+	info['photo'] = imageBaseURL + netID + ".jpg";
 	var payload, target;
 	//Cycle through everything in the dictionary
 	for (key in info) {
 		if (key == 'photo') {
-			payload = '<img src="' + imageBaseURL + info[key] + '">';
+			payload = '<img src="' + info[key] + '">';
 		} else if (key == 'links') {
 			payload = '';
 			var first = true;
