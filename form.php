@@ -4,7 +4,7 @@ header('Content-type: application/json');
 
 function join_listserv($email) {
 	$headers = 'From: ' . $email;
-	if(mail("elm232@cornell.edu","join","join",$headers)) {
+	if(mail("popshop-request-l@cornell.edu","join","join",$headers)) {
 		return Array('success' => TRUE, 'email' => $email);
 	} else {
 		return Array('success' => FALSE,'error' => 'Doh! PHP\'s mail() function failed for some reason. Try again later?');
@@ -13,7 +13,7 @@ function join_listserv($email) {
 
 function send_hello($name, $email, $message) {
 	$headers = 'From: ' . $email;
-	if(mail("elm232@cornell.edu", "Message from " . $name, $message, $headers)) {
+	if(mail("hello@popright.in", "Message from " . $name, $message, $headers)) {
 		return Array('success'=>TRUE);
 	} else {
 		return Array('success'=>FALSE,'error'=>'Doh! PHP\'s mail() function failed for some reason. Try again later?');
