@@ -8,7 +8,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<!-- Fix static header bug in Android 2.2 -->
-		<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 		<meta name="viewport" content="width=device-width" />
 		<title>POPSHOP | Pop in and start up!</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -25,7 +25,7 @@
 			<div class="row">
 				<div class="four columns">
 					<a class="scroll hide-for-small" href="#top"><img src="images/head.png"></a>
-					<a id="nav-trigger" class="show-for-small" href="#"><img src="images/head.png"></a>
+					<a id="nav-trigger" class="show-for-small" href="#"><img class="nav-menu-btn" src="images/icons/menu.png"><img src="images/head.png"></a>
 				</div>
 				<div class="eight columns hide-for-small desktop-nav">
 					<ul data-magellan-expedition>
@@ -53,7 +53,7 @@
 					</ul>
 				</div>
 				<div id="mobile-nav" class="show-for-small">
-					<h3>Menu</h3>
+					<h3>Menu</h3><a id="nav-close-trigger" href="#"><img class="nav-menu-btn" src="images/icons/close.png"></a>
 					<ul data-magellan-expedition>
 						<a class="mobile" href="#top">
 						<li data-magellan-arrival='top'>
@@ -78,10 +78,6 @@
 						<a class="mobile" href="#contribute">
 						<li data-magellan-arrival='contribute'>
 							Contribute
-						</li></a>
-						<a id="nav-close-trigger" href="#">
-						<li>
-							Close
 						</li></a>
 					</ul>
 				</div>
