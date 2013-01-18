@@ -45,7 +45,8 @@ var makeLivestream = function(target) {
 		output += DisplayHeight;
 		output += '" WIDTH="';
 		output += DisplayWidth;
-		output += '" ALT="Camera Image">';
+		output += '" class="webcam-image">';
 	}
+	output += '<img class="webcam-fallback" src="images/sad_camera.png">'
 	document.getElementById(target).innerHTML = output;
 };

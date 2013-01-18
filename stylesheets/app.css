@@ -519,6 +519,20 @@ webcam-btm img {
 }
 
 /*********** Livestream ***********/
+
+.webcam-fallback {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	width: 80%;
+	margin-left: -40%;
+	z-index: 50;
+}
+
+.webcam-image {
+	z-index: 60;
+}
+
 /*********** Bio ***********/
 #bio-modal {
 	width: 60%;
