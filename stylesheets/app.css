@@ -187,11 +187,11 @@ div.clearfix {
 	top: 0;
 	z-index: 10;
 	padding-right: 5px;
-	-webkit-transition: all 0.75s ease-in-out;
-	-moz-transition: all 0.75s ease-in-out;
-	-o-transition: all 0.75s ease-in-out;
-	-ms-transition: all 0.75s ease-in-out;
-	transition: all 0.75s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
 
 #mobile-nav.active {
@@ -350,7 +350,7 @@ webcam-btm img {
 }
 
 .tumblr-teaser {
-	padding-top: 25px;
+	padding: 25px 0px;
 	text-align: center;
 }
 
