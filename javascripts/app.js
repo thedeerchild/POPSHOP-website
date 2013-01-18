@@ -43,6 +43,17 @@
 		//Email Regex
 		var email_check = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$/i;
 		
+		$('#nav-trigger').click(function(e) {
+			e.preventDefault();
+			$('#mobile-nav').addClass('active');
+		});
+		$('#nav-close-trigger').click(function(e) {
+			e.preventDefault();
+			$('#mobile-nav').removeClass('active');
+		});
+		$('a.mobile').click(function(e) {
+			$('#mobile-nav').removeClass('active');
+		});
 		$('.launch-join-modal').click(function(e) {
 			e.preventDefault();
 			$('#join-modal').reveal();

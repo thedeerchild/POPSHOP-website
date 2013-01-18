@@ -26,10 +26,7 @@
 	font-style: normal;
 	font-weight: 600;
 	src: url('../fonts/dosis-semibold-webfont.eot');
-    src: url('../fonts/dosis-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/dosis-semibold-webfont.woff') format('woff'),
-         url('../fonts/dosis-semibold-webfont.ttf') format('truetype'),
-         url('../fonts/dosis-semibold-webfont.svg#webfontregular') format('svg');
+	src: url('../fonts/dosis-semibold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/dosis-semibold-webfont.woff') format('woff'), url('../fonts/dosis-semibold-webfont.ttf') format('truetype'), url('../fonts/dosis-semibold-webfont.svg#webfontregular') format('svg');
 }
 
 @font-face {
@@ -37,10 +34,7 @@
 	font-style: normal;
 	font-weight: 300;
 	src: url('../fonts/nunito-light-webfont.eot');
-    src: url('../fonts/nunito-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/nunito-light-webfont.woff') format('woff'),
-         url('../fonts/nunito-light-webfont.ttf') format('truetype'),
-         url('../fonts/nunito-light-webfont.svg#webfontregular') format('svg');
+	src: url('../fonts/nunito-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/nunito-light-webfont.woff') format('woff'), url('../fonts/nunito-light-webfont.ttf') format('truetype'), url('../fonts/nunito-light-webfont.svg#webfontregular') format('svg');
 }
 
 /* -----------------------------------------
@@ -122,7 +116,7 @@ div.clearfix {
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 5;
+	z-index: 20;
 	width: 100%;
 }
 
@@ -138,13 +132,13 @@ div.clearfix {
 	margin: auto;
 }
 
-.header-row ul {
+.desktop-nav ul {
 	float: right;
 	height: 27px;
 	margin: 0px;
 }
 
-.header-row li {
+.desktop-nav li {
 	display: inline-block;
 	margin: 1px 2px 0px;
 	height: 100%;
@@ -159,22 +153,76 @@ div.clearfix {
 }
 
 @media only screen and (max-width: 880px) {
-	.header-row li {
+	.desktop-nav li {
 		margin-top: -3px;
 	}
 
 }
 
-.header-row li:hover {
+.desktop-nav li:hover {
 	border: 2px solid #b31b1b;
 	color: #b31b1b;
 	padding: 1px 0px 0px;
 }
 
-.header-row li.active {
+.desktop-nav li.active {
 	background: #b31b1b;
 	color: #ffffff; /*-webkit-transition:  background 0.05s linear 0.1s, color 0.05s linear 0.1s;
 	 */
+}
+
+#mobile-nav {
+	width: 80%;
+	height: 100%;
+	max-height: 900px;
+	background: #222222;
+	position: fixed;
+	left: -90%;
+	top: 0;
+	z-index: 10;
+	padding-right: 5px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+#mobile-nav.active {
+	/*transform: translatex(100%) scale(2);
+	-ms-transform: translatex(100%) scale(2);
+	-webkit-transform: translatex(100%) scale(2);
+	-o-transform: translatex(100%) scale(2);
+	-moz-transform: translatex(100%) scale(2);*/
+	left: 0;
+	top: 0;
+}
+
+#mobile-nav h3 {
+	color: #aaaaaa;
+	text-align: center;
+}
+
+#mobile-nav ul {
+	background: #aaaaaa;
+	padding: 1px 0px 0px;
+}
+
+#mobile-nav li {
+	width: 100%;
+	padding: 15px 0px 15px 25px;
+	margin: 0px auto 1px;
+	background: #222222;
+	vertical-align: center;
+	color: #aaaaaa;
+}
+
+#mobile-nav li:hover {
+	background: #555555;
+}
+
+#mobile-nav li.active {
+	margin-left: 5px;
 }
 
 /* -----------------------------------------

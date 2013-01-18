@@ -24,9 +24,10 @@
 		<div class="header-row">
 			<div class="row">
 				<div class="four columns">
-					<a class="scroll" href="#top"><img src="images/head.png"></a>
+					<a class="scroll hide-for-small" href="#top"><img src="images/head.png"></a>
+					<a id="nav-trigger" class="show-for-small" href="#"><img src="images/head.png"></a>
 				</div>
-				<div class="eight columns hide-for-small">
+				<div class="eight columns hide-for-small desktop-nav">
 					<ul data-magellan-expedition>
 						<li style="display:none;" data-magellan-arrival='top'></li>
 						<a class="scroll" href="#visit">
@@ -48,6 +49,39 @@
 						<a class="scroll" href="#contribute">
 						<li data-magellan-arrival='contribute'>
 							Contribute
+						</li></a>
+					</ul>
+				</div>
+				<div id="mobile-nav" class="show-for-small">
+					<h3>Menu</h3>
+					<ul data-magellan-expedition>
+						<a class="mobile" href="#top">
+						<li data-magellan-arrival='top'>
+							Home
+						</li></a>
+						<a class="mobile" href="#visit">
+						<li data-magellan-arrival='visit'>
+							Visit
+						</li></a>
+						<a class="mobile" href="#events">
+						<li data-magellan-arrival='events'>
+							Events
+						</li></a>
+						<a class="mobile" href="#about">
+						<li data-magellan-arrival='about'>
+							About
+						</li></a>
+						<a class="mobile" href="#partners">
+						<li data-magellan-arrival='partners'>
+							Partners
+						</li></a>
+						<a class="mobile" href="#contribute">
+						<li data-magellan-arrival='contribute'>
+							Contribute
+						</li></a>
+						<a id="nav-close-trigger" href="#">
+						<li>
+							Close
 						</li></a>
 					</ul>
 				</div>
