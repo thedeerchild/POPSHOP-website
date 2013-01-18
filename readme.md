@@ -10,7 +10,7 @@ You can also find us on [Facebook](https://www.facebook.com/poprightin) and [Twi
 
 ## Adding a Steering Committee Member or Alumni
 
-Add the person's photo and name to the "partners" section, and add their biography information in the [Google Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0AnPxd5MoDKC8dEhETDdWcXh5Z0tPWkhMV1UwME9jc1E).
+Add the person's photo to the `images/people` folder with the naming pattern {netID}.jpg, name to the "partners" section of `index.html` and add their biography information to the [Google Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0AnPxd5MoDKC8dEhETDdWcXh5Z0tPWkhMV1UwME9jc1E).
 
 ## Making Colored Things
 
@@ -33,7 +33,7 @@ The red in the links and buttons is standard Cornell Red (Carnellian):
 
 ## Editing Javascript
 
-If you're looking for the typical `$(document).ready()` at the bottom of `index.html`, you're in for a surprise.  Add jQuery in `app.js`, then compress it and and append to `app.min.js` using [this JS compressor](http://closure-compiler.appspot.com/home).
+If you're looking for the typical `$(document).ready()` at the bottom of `index.html`, you're in for a surprise.  Add jQuery in `app.js`, then compress it and and append to `app.min.js` using a [javascript compressor](http://closure-compiler.appspot.com/home).
 
 ## Anything Else
 
