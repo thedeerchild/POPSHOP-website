@@ -35,6 +35,10 @@ The red in the links and buttons is standard Cornell Red (Carnellian):
 
 If you're looking for the typical `$(document).ready()` at the bottom of `index.html`, you're in for a surprise.  Add jQuery in `app.js`, then compress it and and append to `app.min.js` using a [javascript compressor](http://closure-compiler.appspot.com/home).
 
+## Replacing Images
+
+Be sure to change the names of images that are being swapped out due to caching being enabled by the .htaccess file.
+
 ## Anything Else
 
 Feel free to email me at elm232 'at' (standard Cornell email scheme) or message me on Github if you have any questions.
