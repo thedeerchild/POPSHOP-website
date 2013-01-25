@@ -68,7 +68,7 @@ Header append Vary User-Agent env=!dont-vary
   ExpiresByType image/svg+xml             "access plus 1 month"
 
 # CSS and JavaScript
-  ExpiresByType application/javascript    "access plus 0 seconds"
-  ExpiresByType text/css                  "access plus 0 seconds"
+  ExpiresByType application/javascript    "access plus 1 week"
+  ExpiresByType text/css                  "access plus 1 week"
 
 </IfModule>
