@@ -8,7 +8,7 @@ Tabletop.init({
 var bios = {};
 
 function loadInfo(data, tabletop) {
-	for (var i = 0; i < data.length; i++) {
+	for (var i = data.length - 1; i >= 0; i--) {
 		//Re-key data based on NetIDs
 		var key = data[i]['netid'];
 		//Remove additional fields so they don't break the template parser
@@ -21,7 +21,7 @@ function loadInfo(data, tabletop) {
 		var original = bios[key]['links'];
 		//Split into seperate links by ';'
 		var links = original.split(";");
-		for (var j = 0; j < links.length; j++) {
+		for (var j = links.length - 1; j >= 0 ; j--) {
 			//Split title from URL by '$'
 			var link = links[j].split("$");
 			linkArray[link[0]] = link[1];
