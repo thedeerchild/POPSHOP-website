@@ -1,6 +1,6 @@
 var makeLivestream = function(target) {
 	// Set the BaseURL to the URL of your camera
-	var BaseURL = "http://onsite.popright.in:8000/";
+	var BaseURL = "http://popshop.axiscam.net:8000/";
 
 	// DisplayWidth & DisplayHeight specifies the displayed width & height of the image.
 	// You may change these numbers, the effect will be a stretched or a shrunk image
@@ -10,10 +10,10 @@ var makeLivestream = function(target) {
 	// This is the path to the image generating file inside the camera itself
 	var File = "axis-cgi/mjpg/video.cgi?resolution=640x480";
 	// No changes required below this point
-	var output = "";
+	var output = '<img class="webcam-fallback" src="images/sad_camera.png"><img class="webcam-fallback" src="images/ajax-loader.gif">';
 	if ((navigator.appName == "Microsoft Internet Explorer") && (navigator.platform != "MacPPC") && (navigator.platform != "Mac68k")) {
 		// If Internet Explorer under Windows then use ActiveX
-		output = '<OBJECT ID="Player" width='
+		output += '<OBJECT ID="Player" width='
 		output += DisplayWidth;
 		output += ' height=';
 		output += DisplayHeight;
@@ -37,7 +37,7 @@ var makeLivestream = function(target) {
 	} else {
 		// If not IE for Windows use the browser itself to display
 		theDate = new Date();
-		output = '<IMG SRC="';
+		output += '<IMG SRC="';
 		output += BaseURL;
 		output += File;
 		output += '&dummy=' + theDate.getTime().toString(10);
@@ -47,6 +47,6 @@ var makeLivestream = function(target) {
 		output += DisplayWidth;
 		output += '" class="webcam-image">';
 	}
-	output += '<img class="webcam-fallback" src="images/sad_camera.png">'
+	output += ''
 	document.getElementById(target).innerHTML = output;
 };

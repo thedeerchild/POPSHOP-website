@@ -521,16 +521,17 @@ webcam-btm img {
 /*********** Livestream ***********/
 
 .webcam-fallback {
-	position: absolute;
-	top: 25%;
-	left: 50%;
+	margin: 4% 10%;
 	width: 80%;
-	margin-left: -40%;
-	z-index: 50;
 }
 
 .webcam-image {
-	z-index: 60;
+	position: absolute;
+	top: 25px;
+	left: 50%;
+	width: 90%;
+	margin-left: -45%;
+	z-index: 10;
 }
 
 /*********** Bio ***********/
