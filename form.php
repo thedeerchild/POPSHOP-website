@@ -4,7 +4,7 @@ header('Content-type: application/json');
 
 function join_listserv($email) {
 	$headers = 'From: ' . $email;
-	if(mail("popshop-request-l@cornell.edu","join","join",$headers)) {
+	if(mail("popshop-l-request@cornell.edu","join","join",$headers)) {
 		return Array('success' => TRUE, 'email' => $email);
 	} else {
 		return Array('success' => FALSE,'error' => 'Doh! PHP\'s mail() function failed for some reason. Try again later?');
