@@ -31,9 +31,13 @@ The red in the links and buttons is standard Cornell Red (Carnellian):
 *   RGB: 179 027 027
 *   Hex: #b31b1b
 
+## Editing CSS
+
+Remember to change the query variable on the end of the CSS call in `index.html` in order to break the cache.
+
 ## Editing Javascript
 
-If you're looking for the typical `$(document).ready()` at the bottom of `index.html`, you're in for a surprise.  Add jQuery in `app.js`, then compress it and and append to `app.min.js` using a [javascript compressor](http://closure-compiler.appspot.com/home).
+If you're looking for the typical `$(document).ready()` at the bottom of `index.html`, you're in for a surprise.  Add jQuery in `app.js`, then compress it and and append to `app.min.js` using a [javascript compressor](http://closure-compiler.appspot.com/home).  Remember to update the query variable on the script tag in `index.html` to break the cache.
 
 ## Replacing Images
 

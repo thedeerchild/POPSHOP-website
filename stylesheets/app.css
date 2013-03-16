@@ -300,6 +300,12 @@ div.clearfix {
 	margin-bottom: 15px;
 }
 
+.listserv-btn {
+	margin: 25px auto 10px;
+	width: 50%;
+	text-align: center;
+}
+
 @media only screen and (max-width: 767px) {
 	.intro-blurb {
 		background: rgba(255,255,255,0.5);
@@ -363,6 +369,11 @@ webcam-btm img {
 	width: 100%;
 }
 
+#listserv {
+	padding-top: 55px;
+	margin-top: -55px;
+}
+
 #list-fm-msg img {
 	display: block;
 	margin: auto;
@@ -417,21 +428,6 @@ webcam-btm img {
 	text-align: center;
 	line-height: 1.2;
 	background: rgba(179,27,27,0.6);
-}
-
-.hacker {
-	/*background:  rgba(0,255,1,0.5);
-	 */
-}
-
-.hustler {
-	/*background:  rgba(255,0,72,0.5);
-	 */
-}
-
-.hipster {
-	/*background:  rgba(2,172,255,0.5);
-	 */
 }
 
 .sponsor-list {
