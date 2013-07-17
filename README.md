@@ -45,7 +45,7 @@ Be sure to change the names of images that are being swapped out due to caching 
 
 ## Anything Else
 
-Feel free to email me at elm232 'at' (standard Cornell email scheme) or message me on Github if you have any questions.
+Feel free to email me at elm232 'at' (standard Cornell email scheme) if you have any questions.
 
 # Components
 
