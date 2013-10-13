@@ -10,4 +10,4 @@ set :application, "POPSHOP-Website"
 set :repository,  "git@github.com:elm232/POPSHOP-website.git"
 
 role :web, "162.243.40.58"
-set :deploy_to, "/home/deployer/www/current"
+set :deploy_to, "/home/deployer/www/popright.in"
