@@ -84,7 +84,7 @@
 			e.preventDefault();
 			$('#livestream-modal').reveal({
 				//Calls webcam.js
-				open : makeLivestream('livestream-container')
+				opened : makeLivestream('livestream-container')
 			});
 		});
 		$('#contact-submit').click(function(e) {
