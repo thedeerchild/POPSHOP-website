@@ -8,6 +8,10 @@ You can also find us on [Facebook](https://www.facebook.com/poprightin) and [Twi
 
 # Common Tasks
 
+## Deploying to the Server
+
+First, make sure you have Ruby/Rubygems/Bundler installed.  Run `bundle install` to install the correct version of Capistrano the first time you deploy.  To deploy the site, run `bundle exec cap deploy`.
+
 ## Adding a Steering Committee Member or Alumni
 
 Add the person's photo to the `images/people` folder with the naming pattern {netID}.jpg, name to the "partners" section of `index.html` and add their biography information to the [Google Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0AnPxd5MoDKC8dEhETDdWcXh5Z0tPWkhMV1UwME9jc1E).
