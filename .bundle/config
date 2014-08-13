@@ -1,0 +1,5 @@
+--- 
+BUNDLE_WITHOUT: development:test
+BUNDLE_FROZEN: "1"
+BUNDLE_DISABLE_SHARED_GEMS: "1"
+BUNDLE_PATH: /home/deployer/www/popright.in/shared/bundle

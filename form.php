@@ -13,7 +13,7 @@ function join_listserv($email) {
 
 function send_hello($name, $email, $message) {
 	$headers = 'From: ' . $email;
-	if(mail("hello@popright.in", "Message from " . $name, $message, $headers)) {
+	if(mail("the-pop-shop@googlegroups.com", "Message from " . $name, $message, $headers)) {
 		return Array('success'=>TRUE);
 	} else {
 		return Array('success'=>FALSE,'error'=>'Doh! PHP\'s mail() function failed for some reason. Try again later?');

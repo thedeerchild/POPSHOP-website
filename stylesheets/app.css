@@ -395,6 +395,17 @@
  }
 
  /*********** Partners ***********/
+ #partners {
+   text-align: center;
+ }
+ #partners a :hover {
+   color: red;
+ }
+
+ #partners a {
+   text-decoration: none;
+ }
+
  #partners img {
  	border-radius: 3px;
  }
@@ -550,6 +561,10 @@
  		width: 90%;
  		margin-left: -45%;
  	}
+
+ }
+
+ .bio-link img {
 
  }
 
