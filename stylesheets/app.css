@@ -424,6 +424,7 @@
  	width: 25%;
  	padding: 0 10px 10px;
  	list-style: none;
+ 	min-height: 321px;
  }
 
  @media only screen and (max-width: 767px) {
